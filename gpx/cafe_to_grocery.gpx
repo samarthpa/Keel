@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Keel App">
+  <trk>
+    <name>Cafe to Grocery Store</name>
+    <trkseg>
+      <trkpt lat="37.7849" lon="-122.4094">
+        <name>Starbucks</name>
+        <desc>Leaving Starbucks</desc>
+      </trkpt>
+      <trkpt lat="37.7949" lon="-122.3994">
+        <name>Walking to grocery</name>
+        <desc>Walking to grocery store</desc>
+      </trkpt>
+      <trkpt lat="37.7949" lon="-122.3994">
+        <name>Whole Foods</name>
+        <desc>Arrived at Whole Foods - stay here for 5+ minutes to trigger visit</desc>
+      </trkpt>
+      <trkpt lat="37.7949" lon="-122.3994">
+        <name>Whole Foods (shopping)</name>
+        <desc>Shopping at Whole Foods - this should trigger a visit detection</desc>
+      </trkpt>
+      <trkpt lat="37.7949" lon="-122.3994">
+        <name>Whole Foods (checkout)</name>
+        <desc>At checkout - extended stay should increase confidence</desc>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

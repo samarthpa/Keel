@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use your location to suggest the best credit card nearby.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need background location access to show recommendations when you enter a store.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location access is required to recommend cards while you shop.</string>
+</dict>
+</plist>

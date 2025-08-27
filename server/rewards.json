@@ -1,0 +1,5 @@
+{
+  "Amex Gold": { "base": 1.0, "categories": { "dining": 4.0, "grocery": 4.0 } },
+  "Chase Freedom": { "base": 1.0, "categories": { "rotating": 5.0 } },
+  "Citi Custom Cash": { "base": 1.0, "categories": { "dining": 5.0, "gas": 5.0 } }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Visit" representedClassName="Visit" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lat" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lon" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="arrival" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="departure" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="merchant" optional="YES" attributeType="String"/>
+        <attribute name="recommendedCard" optional="YES" attributeType="String"/>
+    </entity>
+</model>

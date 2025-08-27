@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Keel App">
+  <trk>
+    <name>Home to Cafe</name>
+    <trkseg>
+      <trkpt lat="37.7749" lon="-122.4194">
+        <name>Home</name>
+        <desc>Starting point at home</desc>
+      </trkpt>
+      <trkpt lat="37.7849" lon="-122.4094">
+        <name>Walking to cafe</name>
+        <desc>Walking down the street</desc>
+      </trkpt>
+      <trkpt lat="37.7849" lon="-122.4094">
+        <name>Starbucks</name>
+        <desc>Arrived at Starbucks - stay here for 5+ minutes to trigger visit</desc>
+      </trkpt>
+      <trkpt lat="37.7849" lon="-122.4094">
+        <name>Starbucks (extended)</name>
+        <desc>Still at Starbucks - this should trigger a visit detection</desc>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
