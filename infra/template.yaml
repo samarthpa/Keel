@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Card Optimizer API (MVP)
+
+Globals:
+  Function:
+    Runtime: python3.11
+    Timeout: 10
+    MemorySize: 512
+    Architectures: [x86_64]
+    Environment:
+      Variables:
+        GOOGLE_SECRET_NAME: google/places/api_key
+
+Resources:
+  Api:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      Cors: "'*'"
+
+  ResolveFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../server
+      Handler: merchant_resolver.handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - SecretsManagerReadWrite
+      Events:
+        GetResolve:
+          Type: Api
+          Properties:
+            RestApiId: !Ref Api
+            Path: /merchant/resolve
+            Method: get
+
+  ScoreFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../server
+      Handler: score.handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        PostScore:
+          Type: Api
+          Properties:
+            RestApiId: !Ref Api
+            Path: /score
+            Method: post
