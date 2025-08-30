@@ -17,12 +17,12 @@
 		A1234567890ABCDEF010 /* ConfidenceScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF00F /* ConfidenceScorer.swift */; };
 		A1234567890ABCDEF012 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF011 /* Persistence.swift */; };
 		A1234567890ABCDEF014 /* VisitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF013 /* VisitStore.swift */; };
-		A1234567890ABCDEF016 /* Visit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF015 /* Visit+CoreDataClass.swift */; };
-		A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF017 /* Visit+CoreDataProperties.swift */; };
+		A1234567890ABCDEF015 /* Visit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF016 /* Visit+CoreDataClass.swift */; };
+		A1234567890ABCDEF017 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift */; };
+		A1234567890ABCDEF019 /* Visits.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF01B /* Visits.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1234567890ABCDEF01A /* Keel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1234567890ABCDEF000 /* KeelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeelApp.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,9 +33,9 @@
 		A1234567890ABCDEF00F /* ConfidenceScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidenceScorer.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF011 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A1234567890ABCDEF013 /* VisitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitStore.swift; sourceTree = "<group>"; };
-		A1234567890ABCDEF015 /* Visit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1234567890ABCDEF017 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A1234567890ABCDEF019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1234567890ABCDEF016 /* Visit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1234567890ABCDEF01A /* Keel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1234567890ABCDEF01B /* Visits.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Visits.xcdatamodeld; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,9 +69,10 @@
 				A1234567890ABCDEF00F /* ConfidenceScorer.swift */,
 				A1234567890ABCDEF011 /* Persistence.swift */,
 				A1234567890ABCDEF013 /* VisitStore.swift */,
+				A1234567890ABCDEF016 /* Visit+CoreDataClass.swift */,
+				A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift */,
 				A1234567890ABCDEF01B /* Visits.xcdatamodeld */,
 				A1234567890ABCDEF004 /* Assets.xcassets */,
-				A1234567890ABCDEF019 /* Info.plist */,
 				A1234567890ABCDEF020 /* Preview Content */,
 			);
 			path = Keel;
@@ -93,18 +94,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A1234567890ABCDEF021 /* Keel.xcodeproj */ = {
-			isa = PBXGroup;
-			children = (
-				A1234567890ABCDEF01D /* Keel */,
-				A1234567890ABCDEF022 /* project.pbxproj */,
-			);
-			sourceTree = "<group>";
-		};
+
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1234567890ABCDEF01D /* Keel */ = {
+		A1234567890ABCDEF021 /* Keel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1234567890ABCDEF023 /* Build configuration list for PBXNativeTarget "Keel" */;
 			buildPhases = (
@@ -131,7 +125,7 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					A1234567890ABCDEF01D = {
+					A1234567890ABCDEF021 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -149,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1234567890ABCDEF01D /* Keel */,
+				A1234567890ABCDEF021 /* Keel */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1234567890ABCDEF008 /* Preview Assets.xcassets in Resources */,
+				A1234567890ABCDEF019 /* Visits.xcdatamodeld in Resources */,
 				A1234567890ABCDEF005 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,15 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1234567890ABCDEF003 /* ContentView.swift */,
+				A1234567890ABCDEF003 /* ContentView.swift in Sources */,
 				A1234567890ABCDEF00A /* LocationManager.swift in Sources */,
 				A1234567890ABCDEF00C /* NotificationManager.swift in Sources */,
 				A1234567890ABCDEF00E /* ApiClient.swift in Sources */,
 				A1234567890ABCDEF010 /* ConfidenceScorer.swift in Sources */,
 				A1234567890ABCDEF012 /* Persistence.swift in Sources */,
 				A1234567890ABCDEF014 /* VisitStore.swift in Sources */,
-				A1234567890ABCDEF016 /* Visit+CoreDataClass.swift in Sources */,
-				A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift in Sources */,
+				A1234567890ABCDEF015 /* Visit+CoreDataClass.swift in Sources */,
+				A1234567890ABCDEF017 /* Visit+CoreDataProperties.swift in Sources */,
 				A1234567890ABCDEF001 /* KeelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,10 +308,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Keel/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Keel/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,11 +335,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Keel/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = Keel/Info.plist;
-				INFOPLIST_FILE = Keel/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -368,20 +358,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1234567890ABCDEF027 /* Build configuration list for PBXProject "Keel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A1234567890ABCDEF028 /* Debug */,
-				A1234567890ABCDEF029 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		A1234567890ABCDEF023 /* Build configuration list for PBXNativeTarget "Keel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1234567890ABCDEF02A /* Debug */,
 				A1234567890ABCDEF02B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1234567890ABCDEF027 /* Build configuration list for PBXProject "Keel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1234567890ABCDEF028 /* Debug */,
+				A1234567890ABCDEF029 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

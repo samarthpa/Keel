@@ -59,7 +59,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         // Calculate confidence score
         let currentTime = Date()
-        let dwellMinutes = visitStartTimes[locationKey]?.timeIntervalSince(currentTime).magnitude / 60.0
+        let dwellMinutes = (visitStartTimes[locationKey]?.timeIntervalSince(currentTime).magnitude ?? 0.0) / 60.0
         let priorVisits = merchantVisitCounts[locationKey] ?? 0
         let timeOfDay = Calendar.current.component(.hour, from: currentTime)
         

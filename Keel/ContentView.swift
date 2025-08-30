@@ -22,7 +22,7 @@ struct ContentView: View {
                                 Text(visit.merchant ?? "Unknown Location")
                                     .font(.headline)
                                 Spacer()
-                                Text(visit.arrival, style: .time)
+                                Text(visit.arrival ?? Date(), style: .time)
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }
