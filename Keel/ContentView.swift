@@ -42,9 +42,13 @@ struct ContentView: View {
                 }
                 
                 Button("Request Permissions") {
+                    print("Request Permissions button tapped")
                     locationManager.requestPermissions()
                 }
                 .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }
             .navigationTitle("Keel")
         }

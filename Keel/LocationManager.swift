@@ -26,13 +26,18 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func requestPermissions() {
-        // Request both "When In Use" and "Always" authorization
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
+        print("LocationManager: Requesting permissions...")
         
-        // Start monitoring for significant location changes and visits
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.startMonitoringVisits()
+        // Check current authorization status first
+        let currentStatus = locationManager.authorizationStatus
+        print("LocationManager: Current authorization status: \(currentStatus.rawValue)")
+        
+        // Request "When In Use" authorization first
+        print("LocationManager: Requesting 'When In Use' authorization...")
+        locationManager.requestWhenInUseAuthorization()
+        
+        // Note: We'll request "Always" authorization after "When In Use" is granted
+        // This is the recommended approach to avoid confusing the user
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -139,17 +144,29 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("LocationManager: Authorization status changed to: \(status.rawValue)")
+        
         switch status {
         case .authorizedWhenInUse:
-            print("Location authorization: When In Use")
+            print("LocationManager: 'When In Use' authorization granted")
+            // Now request "Always" authorization for background monitoring
+            print("LocationManager: Requesting 'Always' authorization for background monitoring...")
+            locationManager.requestAlwaysAuthorization()
+            
         case .authorizedAlways:
-            print("Location authorization: Always")
+            print("LocationManager: 'Always' authorization granted - starting location monitoring")
+            // Start monitoring for significant location changes and visits
+            locationManager.startMonitoringSignificantLocationChanges()
+            locationManager.startMonitoringVisits()
+            
         case .denied, .restricted:
-            print("Location authorization denied or restricted")
+            print("LocationManager: Authorization denied or restricted")
+            
         case .notDetermined:
-            print("Location authorization not determined")
+            print("LocationManager: Authorization not determined")
+            
         @unknown default:
-            print("Unknown location authorization status")
+            print("LocationManager: Unknown authorization status")
         }
     }
     

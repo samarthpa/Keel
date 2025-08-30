@@ -242,6 +242,9 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to suggest the best credit card nearby.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to show recommendations when you enter a store.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location access is required to recommend cards while you shop.";
 			};
 			name = Debug;
 		};
@@ -310,6 +313,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to show recommendations when you enter a store.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location access is required to recommend cards while you shop.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to suggest the best credit card nearby.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,6 +343,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to show recommendations when you enter a store.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location access is required to recommend cards while you shop.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to suggest the best credit card nearby.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
