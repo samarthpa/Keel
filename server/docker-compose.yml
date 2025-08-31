@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://keel_user:keel_password@db:5432/keel_db
+      - REDIS_URL=redis://redis:6379
+      - GOOGLE_PLACES_API_KEY=${AIzaSyALPTBqIfOHe2X1LGDafnqPgp549kWQQAE}
+      - OPENAI_API_KEY=${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}
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./app:/app/app
+    networks:
+      - keel-network
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=keel_db
+      - POSTGRES_USER=keel_user
+      - POSTGRES_PASSWORD=keel_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - keel-network
+
+  # Redis service for idempotency and caching
+  # Run 'docker compose up -d' to start Redis for development
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    # No volumes - ephemeral storage for development
+    networks:
+      - keel-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - api
+    networks:
+      - keel-network
+
+volumes:
+  postgres_data:
+  # Removed redis_data volume for ephemeral Redis
+
+networks:
+  keel-network:
+    driver: bridge

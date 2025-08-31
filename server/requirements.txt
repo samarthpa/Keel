@@ -1,4 +1,29 @@
+# FastAPI web framework for building APIs
 fastapi
-mangum
+
+# ASGI server for running FastAPI applications
+uvicorn[standard]
+
+# HTTP client library for making API requests
 requests
-boto3
+
+# Data validation and settings management
+pydantic
+
+# Settings management with environment variable support
+pydantic-settings
+
+# Environment variable loading from .env files
+python-dotenv
+
+# Structured logging for better observability
+structlog
+
+# Redis client for caching and data storage
+redis
+
+# SQL database ORM with async support
+sqlmodel[sqlite]
+
+# OpenAI API client for AI-powered features
+openai

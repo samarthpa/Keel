@@ -20,6 +20,72 @@
 		A1234567890ABCDEF015 /* Visit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF016 /* Visit+CoreDataClass.swift */; };
 		A1234567890ABCDEF017 /* Visit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift */; };
 		A1234567890ABCDEF019 /* Visits.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF01B /* Visits.xcdatamodeld */; };
+		D4F3EAEC2E640C9C00405AFC /* events.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EABC2E640C9C00405AFC /* events.py */; };
+		D4F3EAED2E640C9C00405AFC /* openai_client.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC32E640C9C00405AFC /* openai_client.cpython-313.pyc */; };
+		D4F3EAEE2E640C9C00405AFC /* env.example in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE32E640C9C00405AFC /* env.example */; };
+		D4F3EAEF2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB32E640C9C00405AFC /* __init__.cpython-313.pyc */; };
+		D4F3EAF02E640C9C00405AFC /* health.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EABD2E640C9C00405AFC /* health.py */; };
+		D4F3EAF12E640C9C00405AFC /* client_contract.md in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE12E640C9C00405AFC /* client_contract.md */; };
+		D4F3EAF22E640C9C00405AFC /* settings.cpython-310.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAAA2E640C9C00405AFC /* settings.cpython-310.pyc */; };
+		D4F3EAF32E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD42E640C9C00405AFC /* __init__.cpython-313.pyc */; };
+		D4F3EAF42E640C9C00405AFC /* 2328498117757493496 in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA22E640C9C00405AFC /* 2328498117757493496 */; };
+		D4F3EAF52E640C9C00405AFC /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD02E640C9C00405AFC /* __init__.py */; };
+		D4F3EAF62E640C9C00405AFC /* resolve.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB72E640C9C00405AFC /* resolve.cpython-313.pyc */; };
+		D4F3EAF72E640C9C00405AFC /* main.cpython-310.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA02E640C9C00405AFC /* main.cpython-310.pyc */; };
+		D4F3EAF82E640C9C00405AFC /* template.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EA9C2E640C9C00405AFC /* template.yaml */; };
+		D4F3EAF92E640C9C00405AFC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA42E640C9C00405AFC /* .gitignore */; };
+		D4F3EAFA2E640C9C00405AFC /* request_id.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB12E640C9C00405AFC /* request_id.py */; };
+		D4F3EAFB2E640C9C00405AFC /* errors.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD52E640C9C00405AFC /* errors.cpython-313.pyc */; };
+		D4F3EAFC2E640C9C00405AFC /* cafe_to_grocery.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EA982E640C9C00405AFC /* cafe_to_grocery.gpx */; };
+		D4F3EAFD2E640C9C00405AFC /* main.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA92E640C9C00405AFC /* main.cpython-313.pyc */; };
+		D4F3EAFE2E640C9C00405AFC /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE42E640C9C00405AFC /* main.py */; };
+		D4F3EAFF2E640C9C00405AFC /* events.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB52E640C9C00405AFC /* events.cpython-313.pyc */; };
+		D4F3EB002E640C9C00405AFC /* scoring.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC52E640C9C00405AFC /* scoring.cpython-313.pyc */; };
+		D4F3EB012E640C9C00405AFC /* .env in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE02E640C9C00405AFC /* .env */; };
+		D4F3EB022E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EACD2E640C9C00405AFC /* __init__.cpython-313.pyc */; };
+		D4F3EB032E640C9C00405AFC /* scoring.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EACB2E640C9C00405AFC /* scoring.py */; };
+		D4F3EB042E640C9C00405AFC /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB02E640C9C00405AFC /* __init__.py */; };
+		D4F3EB052E640C9C00405AFC /* logging.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD62E640C9C00405AFC /* logging.cpython-313.pyc */; };
+		D4F3EB062E640C9C00405AFC /* score.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB82E640C9C00405AFC /* score.cpython-313.pyc */; };
+		D4F3EB072E640C9C00405AFC /* config.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EABB2E640C9C00405AFC /* config.py */; };
+		D4F3EB082E640C9C00405AFC /* openai_client.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC92E640C9C00405AFC /* openai_client.py */; };
+		D4F3EB092E640C9C00405AFC /* config_store.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC22E640C9C00405AFC /* config_store.cpython-313.pyc */; };
+		D4F3EB0A2E640C9C00405AFC /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EADC2E640C9C00405AFC /* __init__.py */; };
+		D4F3EB0B2E640C9C00405AFC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EA9E2E640C9C00405AFC /* README.md */; };
+		D4F3EB0C2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA82E640C9C00405AFC /* __init__.cpython-313.pyc */; };
+		D4F3EB0D2E640C9C00405AFC /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC72E640C9C00405AFC /* __init__.py */; };
+		D4F3EB0E2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC12E640C9C00405AFC /* __init__.cpython-313.pyc */; };
+		D4F3EB0F2E640C9C00405AFC /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EABA2E640C9C00405AFC /* __init__.py */; };
+		D4F3EB102E640C9C00405AFC /* logging.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EADA2E640C9C00405AFC /* logging.py */; };
+		D4F3EB112E640C9C00405AFC /* merchant_resolver.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE62E640C9C00405AFC /* merchant_resolver.py */; };
+		D4F3EB122E640C9C00405AFC /* places_client.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC42E640C9C00405AFC /* places_client.cpython-313.pyc */; };
+		D4F3EB132E640C9C00405AFC /* __init__.cpython-310.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA72E640C9C00405AFC /* __init__.cpython-310.pyc */; };
+		D4F3EB142E640C9C00405AFC /* home_to_cafe.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EA992E640C9C00405AFC /* home_to_cafe.gpx */; };
+		D4F3EB152E640C9C00405AFC /* db.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD12E640C9C00405AFC /* db.py */; };
+		D4F3EB162E640C9C00405AFC /* errors.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD92E640C9C00405AFC /* errors.py */; };
+		D4F3EB172E640C9C00405AFC /* score.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAEA2E640C9C00405AFC /* score.py */; };
+		D4F3EB182E640C9C00405AFC /* CACHEDIR.TAG in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAA52E640C9C00405AFC /* CACHEDIR.TAG */; };
+		D4F3EB192E640C9C00405AFC /* places_client.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EACA2E640C9C00405AFC /* places_client.py */; };
+		D4F3EB1A2E640C9C00405AFC /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EADD2E640C9C00405AFC /* main.py */; };
+		D4F3EB1B2E640C9C00405AFC /* redis_store.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD22E640C9C00405AFC /* redis_store.py */; };
+		D4F3EB1C2E640C9C00405AFC /* resolve.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EABE2E640C9C00405AFC /* resolve.py */; };
+		D4F3EB1D2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAAD2E640C9C00405AFC /* __init__.cpython-313.pyc */; };
+		D4F3EB1E2E640C9C00405AFC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE72E640C9C00405AFC /* README.md */; };
+		D4F3EB1F2E640C9C00405AFC /* request_id.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAAE2E640C9C00405AFC /* request_id.cpython-313.pyc */; };
+		D4F3EB202E640C9C00405AFC /* rewards.json in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE92E640C9C00405AFC /* rewards.json */; };
+		D4F3EB212E640C9C00405AFC /* health.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB62E640C9C00405AFC /* health.cpython-313.pyc */; };
+		D4F3EB222E640C9C00405AFC /* docker-compose.yml in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE22E640C9C00405AFC /* docker-compose.yml */; };
+		D4F3EB232E640C9C00405AFC /* settings.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAAB2E640C9C00405AFC /* settings.cpython-313.pyc */; };
+		D4F3EB242E640C9C00405AFC /* settings.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EADE2E640C9C00405AFC /* settings.py */; };
+		D4F3EB252E640C9C00405AFC /* README_AWS.md in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EA9F2E640C9C00405AFC /* README_AWS.md */; };
+		D4F3EB262E640C9C00405AFC /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAD82E640C9C00405AFC /* __init__.py */; };
+		D4F3EB272E640C9C00405AFC /* config.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAB42E640C9C00405AFC /* config.cpython-313.pyc */; };
+		D4F3EB282E640C9C00405AFC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EA9A2E640C9C00405AFC /* README.md */; };
+		D4F3EB292E640C9C00405AFC /* redis_store.cpython-313.pyc in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EACE2E640C9C00405AFC /* redis_store.cpython-313.pyc */; };
+		D4F3EB2A2E640C9C00405AFC /* config_store.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAC82E640C9C00405AFC /* config_store.py */; };
+		D4F3EB2B2E640C9C00405AFC /* score.py in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EABF2E640C9C00405AFC /* score.py */; };
+		D4F3EB2C2E640C9C00405AFC /* requirements.txt in Resources */ = {isa = PBXBuildFile; fileRef = D4F3EAE82E640C9C00405AFC /* requirements.txt */; };
+		D4F3EB2D2E640C9C00405AFC /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = D4F3EAE52E640C9C00405AFC /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +103,72 @@
 		A1234567890ABCDEF018 /* Visit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Visit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1234567890ABCDEF01A /* Keel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1234567890ABCDEF01B /* Visits.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Visits.xcdatamodeld; sourceTree = "<group>"; };
+		D4F3EA982E640C9C00405AFC /* cafe_to_grocery.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = cafe_to_grocery.gpx; sourceTree = "<group>"; };
+		D4F3EA992E640C9C00405AFC /* home_to_cafe.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = home_to_cafe.gpx; sourceTree = "<group>"; };
+		D4F3EA9A2E640C9C00405AFC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4F3EA9C2E640C9C00405AFC /* template.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = template.yaml; sourceTree = "<group>"; };
+		D4F3EA9E2E640C9C00405AFC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4F3EA9F2E640C9C00405AFC /* README_AWS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_AWS.md; sourceTree = "<group>"; };
+		D4F3EAA02E640C9C00405AFC /* main.cpython-310.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "main.cpython-310.pyc"; sourceTree = "<group>"; };
+		D4F3EAA22E640C9C00405AFC /* 2328498117757493496 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2328498117757493496; sourceTree = "<group>"; };
+		D4F3EAA42E640C9C00405AFC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D4F3EAA52E640C9C00405AFC /* CACHEDIR.TAG */ = {isa = PBXFileReference; lastKnownFileType = text; path = CACHEDIR.TAG; sourceTree = "<group>"; };
+		D4F3EAA72E640C9C00405AFC /* __init__.cpython-310.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-310.pyc"; sourceTree = "<group>"; };
+		D4F3EAA82E640C9C00405AFC /* __init__.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAA92E640C9C00405AFC /* main.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "main.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAAA2E640C9C00405AFC /* settings.cpython-310.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "settings.cpython-310.pyc"; sourceTree = "<group>"; };
+		D4F3EAAB2E640C9C00405AFC /* settings.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "settings.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAAD2E640C9C00405AFC /* __init__.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAAE2E640C9C00405AFC /* request_id.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "request_id.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAB02E640C9C00405AFC /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		D4F3EAB12E640C9C00405AFC /* request_id.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = request_id.py; sourceTree = "<group>"; };
+		D4F3EAB32E640C9C00405AFC /* __init__.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAB42E640C9C00405AFC /* config.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "config.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAB52E640C9C00405AFC /* events.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "events.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAB62E640C9C00405AFC /* health.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "health.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAB72E640C9C00405AFC /* resolve.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "resolve.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAB82E640C9C00405AFC /* score.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "score.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EABA2E640C9C00405AFC /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		D4F3EABB2E640C9C00405AFC /* config.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = config.py; sourceTree = "<group>"; };
+		D4F3EABC2E640C9C00405AFC /* events.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = events.py; sourceTree = "<group>"; };
+		D4F3EABD2E640C9C00405AFC /* health.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = health.py; sourceTree = "<group>"; };
+		D4F3EABE2E640C9C00405AFC /* resolve.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = resolve.py; sourceTree = "<group>"; };
+		D4F3EABF2E640C9C00405AFC /* score.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = score.py; sourceTree = "<group>"; };
+		D4F3EAC12E640C9C00405AFC /* __init__.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAC22E640C9C00405AFC /* config_store.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "config_store.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAC32E640C9C00405AFC /* openai_client.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "openai_client.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAC42E640C9C00405AFC /* places_client.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "places_client.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAC52E640C9C00405AFC /* scoring.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "scoring.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAC72E640C9C00405AFC /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		D4F3EAC82E640C9C00405AFC /* config_store.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = config_store.py; sourceTree = "<group>"; };
+		D4F3EAC92E640C9C00405AFC /* openai_client.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = openai_client.py; sourceTree = "<group>"; };
+		D4F3EACA2E640C9C00405AFC /* places_client.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = places_client.py; sourceTree = "<group>"; };
+		D4F3EACB2E640C9C00405AFC /* scoring.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = scoring.py; sourceTree = "<group>"; };
+		D4F3EACD2E640C9C00405AFC /* __init__.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EACE2E640C9C00405AFC /* redis_store.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "redis_store.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAD02E640C9C00405AFC /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		D4F3EAD12E640C9C00405AFC /* db.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = db.py; sourceTree = "<group>"; };
+		D4F3EAD22E640C9C00405AFC /* redis_store.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = redis_store.py; sourceTree = "<group>"; };
+		D4F3EAD42E640C9C00405AFC /* __init__.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "__init__.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAD52E640C9C00405AFC /* errors.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "errors.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAD62E640C9C00405AFC /* logging.cpython-313.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logging.cpython-313.pyc"; sourceTree = "<group>"; };
+		D4F3EAD82E640C9C00405AFC /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		D4F3EAD92E640C9C00405AFC /* errors.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = errors.py; sourceTree = "<group>"; };
+		D4F3EADA2E640C9C00405AFC /* logging.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = logging.py; sourceTree = "<group>"; };
+		D4F3EADC2E640C9C00405AFC /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		D4F3EADD2E640C9C00405AFC /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		D4F3EADE2E640C9C00405AFC /* settings.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = settings.py; sourceTree = "<group>"; };
+		D4F3EAE02E640C9C00405AFC /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
+		D4F3EAE12E640C9C00405AFC /* client_contract.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = client_contract.md; sourceTree = "<group>"; };
+		D4F3EAE22E640C9C00405AFC /* docker-compose.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "docker-compose.yml"; sourceTree = "<group>"; };
+		D4F3EAE32E640C9C00405AFC /* env.example */ = {isa = PBXFileReference; lastKnownFileType = text; path = env.example; sourceTree = "<group>"; };
+		D4F3EAE42E640C9C00405AFC /* main.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		D4F3EAE52E640C9C00405AFC /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		D4F3EAE62E640C9C00405AFC /* merchant_resolver.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = merchant_resolver.py; sourceTree = "<group>"; };
+		D4F3EAE72E640C9C00405AFC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4F3EAE82E640C9C00405AFC /* requirements.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = requirements.txt; sourceTree = "<group>"; };
+		D4F3EAE92E640C9C00405AFC /* rewards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rewards.json; sourceTree = "<group>"; };
+		D4F3EAEA2E640C9C00405AFC /* score.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = score.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,9 +182,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A1234567890ABCDEF01D /* Keel */ = {
+		A1234567890ABCDEF01D = {
 			isa = PBXGroup;
 			children = (
+				D4F3EA9B2E640C9C00405AFC /* gpx */,
+				D4F3EA9D2E640C9C00405AFC /* infra */,
+				D4F3EA9E2E640C9C00405AFC /* README.md */,
+				D4F3EA9F2E640C9C00405AFC /* README_AWS.md */,
+				D4F3EAEB2E640C9C00405AFC /* server */,
 				A1234567890ABCDEF01E /* Keel */,
 				A1234567890ABCDEF01F /* Products */,
 			);
@@ -94,7 +231,211 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-
+		D4F3EA9B2E640C9C00405AFC /* gpx */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EA982E640C9C00405AFC /* cafe_to_grocery.gpx */,
+				D4F3EA992E640C9C00405AFC /* home_to_cafe.gpx */,
+				D4F3EA9A2E640C9C00405AFC /* README.md */,
+			);
+			path = gpx;
+			sourceTree = "<group>";
+		};
+		D4F3EA9D2E640C9C00405AFC /* infra */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EA9C2E640C9C00405AFC /* template.yaml */,
+			);
+			path = infra;
+			sourceTree = "<group>";
+		};
+		D4F3EAA12E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAA02E640C9C00405AFC /* main.cpython-310.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EAA32E640C9C00405AFC /* 0.12.11 */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAA22E640C9C00405AFC /* 2328498117757493496 */,
+			);
+			path = 0.12.11;
+			sourceTree = "<group>";
+		};
+		D4F3EAA62E640C9C00405AFC /* .ruff_cache */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAA32E640C9C00405AFC /* 0.12.11 */,
+				D4F3EAA42E640C9C00405AFC /* .gitignore */,
+				D4F3EAA52E640C9C00405AFC /* CACHEDIR.TAG */,
+			);
+			path = .ruff_cache;
+			sourceTree = "<group>";
+		};
+		D4F3EAAC2E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAA72E640C9C00405AFC /* __init__.cpython-310.pyc */,
+				D4F3EAA82E640C9C00405AFC /* __init__.cpython-313.pyc */,
+				D4F3EAA92E640C9C00405AFC /* main.cpython-313.pyc */,
+				D4F3EAAA2E640C9C00405AFC /* settings.cpython-310.pyc */,
+				D4F3EAAB2E640C9C00405AFC /* settings.cpython-313.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EAAF2E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAAD2E640C9C00405AFC /* __init__.cpython-313.pyc */,
+				D4F3EAAE2E640C9C00405AFC /* request_id.cpython-313.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EAB22E640C9C00405AFC /* middleware */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAAF2E640C9C00405AFC /* __pycache__ */,
+				D4F3EAB02E640C9C00405AFC /* __init__.py */,
+				D4F3EAB12E640C9C00405AFC /* request_id.py */,
+			);
+			path = middleware;
+			sourceTree = "<group>";
+		};
+		D4F3EAB92E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAB32E640C9C00405AFC /* __init__.cpython-313.pyc */,
+				D4F3EAB42E640C9C00405AFC /* config.cpython-313.pyc */,
+				D4F3EAB52E640C9C00405AFC /* events.cpython-313.pyc */,
+				D4F3EAB62E640C9C00405AFC /* health.cpython-313.pyc */,
+				D4F3EAB72E640C9C00405AFC /* resolve.cpython-313.pyc */,
+				D4F3EAB82E640C9C00405AFC /* score.cpython-313.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EAC02E640C9C00405AFC /* routes */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAB92E640C9C00405AFC /* __pycache__ */,
+				D4F3EABA2E640C9C00405AFC /* __init__.py */,
+				D4F3EABB2E640C9C00405AFC /* config.py */,
+				D4F3EABC2E640C9C00405AFC /* events.py */,
+				D4F3EABD2E640C9C00405AFC /* health.py */,
+				D4F3EABE2E640C9C00405AFC /* resolve.py */,
+				D4F3EABF2E640C9C00405AFC /* score.py */,
+			);
+			path = routes;
+			sourceTree = "<group>";
+		};
+		D4F3EAC62E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAC12E640C9C00405AFC /* __init__.cpython-313.pyc */,
+				D4F3EAC22E640C9C00405AFC /* config_store.cpython-313.pyc */,
+				D4F3EAC32E640C9C00405AFC /* openai_client.cpython-313.pyc */,
+				D4F3EAC42E640C9C00405AFC /* places_client.cpython-313.pyc */,
+				D4F3EAC52E640C9C00405AFC /* scoring.cpython-313.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EACC2E640C9C00405AFC /* services */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAC62E640C9C00405AFC /* __pycache__ */,
+				D4F3EAC72E640C9C00405AFC /* __init__.py */,
+				D4F3EAC82E640C9C00405AFC /* config_store.py */,
+				D4F3EAC92E640C9C00405AFC /* openai_client.py */,
+				D4F3EACA2E640C9C00405AFC /* places_client.py */,
+				D4F3EACB2E640C9C00405AFC /* scoring.py */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		D4F3EACF2E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EACD2E640C9C00405AFC /* __init__.cpython-313.pyc */,
+				D4F3EACE2E640C9C00405AFC /* redis_store.cpython-313.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EAD32E640C9C00405AFC /* stores */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EACF2E640C9C00405AFC /* __pycache__ */,
+				D4F3EAD02E640C9C00405AFC /* __init__.py */,
+				D4F3EAD12E640C9C00405AFC /* db.py */,
+				D4F3EAD22E640C9C00405AFC /* redis_store.py */,
+			);
+			path = stores;
+			sourceTree = "<group>";
+		};
+		D4F3EAD72E640C9C00405AFC /* __pycache__ */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAD42E640C9C00405AFC /* __init__.cpython-313.pyc */,
+				D4F3EAD52E640C9C00405AFC /* errors.cpython-313.pyc */,
+				D4F3EAD62E640C9C00405AFC /* logging.cpython-313.pyc */,
+			);
+			path = __pycache__;
+			sourceTree = "<group>";
+		};
+		D4F3EADB2E640C9C00405AFC /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAD72E640C9C00405AFC /* __pycache__ */,
+				D4F3EAD82E640C9C00405AFC /* __init__.py */,
+				D4F3EAD92E640C9C00405AFC /* errors.py */,
+				D4F3EADA2E640C9C00405AFC /* logging.py */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		D4F3EADF2E640C9C00405AFC /* app */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAAC2E640C9C00405AFC /* __pycache__ */,
+				D4F3EAB22E640C9C00405AFC /* middleware */,
+				D4F3EAC02E640C9C00405AFC /* routes */,
+				D4F3EACC2E640C9C00405AFC /* services */,
+				D4F3EAD32E640C9C00405AFC /* stores */,
+				D4F3EADB2E640C9C00405AFC /* utils */,
+				D4F3EADC2E640C9C00405AFC /* __init__.py */,
+				D4F3EADD2E640C9C00405AFC /* main.py */,
+				D4F3EADE2E640C9C00405AFC /* settings.py */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		D4F3EAEB2E640C9C00405AFC /* server */ = {
+			isa = PBXGroup;
+			children = (
+				D4F3EAA12E640C9C00405AFC /* __pycache__ */,
+				D4F3EAA62E640C9C00405AFC /* .ruff_cache */,
+				D4F3EADF2E640C9C00405AFC /* app */,
+				D4F3EAE02E640C9C00405AFC /* .env */,
+				D4F3EAE12E640C9C00405AFC /* client_contract.md */,
+				D4F3EAE22E640C9C00405AFC /* docker-compose.yml */,
+				D4F3EAE32E640C9C00405AFC /* env.example */,
+				D4F3EAE42E640C9C00405AFC /* main.py */,
+				D4F3EAE52E640C9C00405AFC /* Makefile */,
+				D4F3EAE62E640C9C00405AFC /* merchant_resolver.py */,
+				D4F3EAE72E640C9C00405AFC /* README.md */,
+				D4F3EAE82E640C9C00405AFC /* requirements.txt */,
+				D4F3EAE92E640C9C00405AFC /* rewards.json */,
+				D4F3EAEA2E640C9C00405AFC /* score.py */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +494,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F3EAEC2E640C9C00405AFC /* events.py in Resources */,
+				D4F3EAED2E640C9C00405AFC /* openai_client.cpython-313.pyc in Resources */,
+				D4F3EAEE2E640C9C00405AFC /* env.example in Resources */,
+				D4F3EAEF2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */,
+				D4F3EAF02E640C9C00405AFC /* health.py in Resources */,
+				D4F3EAF12E640C9C00405AFC /* client_contract.md in Resources */,
+				D4F3EAF22E640C9C00405AFC /* settings.cpython-310.pyc in Resources */,
+				D4F3EAF32E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */,
+				D4F3EAF42E640C9C00405AFC /* 2328498117757493496 in Resources */,
+				D4F3EAF52E640C9C00405AFC /* __init__.py in Resources */,
+				D4F3EAF62E640C9C00405AFC /* resolve.cpython-313.pyc in Resources */,
+				D4F3EAF72E640C9C00405AFC /* main.cpython-310.pyc in Resources */,
+				D4F3EAF82E640C9C00405AFC /* template.yaml in Resources */,
+				D4F3EAF92E640C9C00405AFC /* .gitignore in Resources */,
+				D4F3EAFA2E640C9C00405AFC /* request_id.py in Resources */,
+				D4F3EAFB2E640C9C00405AFC /* errors.cpython-313.pyc in Resources */,
+				D4F3EAFC2E640C9C00405AFC /* cafe_to_grocery.gpx in Resources */,
+				D4F3EAFD2E640C9C00405AFC /* main.cpython-313.pyc in Resources */,
+				D4F3EAFE2E640C9C00405AFC /* main.py in Resources */,
+				D4F3EAFF2E640C9C00405AFC /* events.cpython-313.pyc in Resources */,
+				D4F3EB002E640C9C00405AFC /* scoring.cpython-313.pyc in Resources */,
+				D4F3EB012E640C9C00405AFC /* .env in Resources */,
+				D4F3EB022E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */,
+				D4F3EB032E640C9C00405AFC /* scoring.py in Resources */,
+				D4F3EB042E640C9C00405AFC /* __init__.py in Resources */,
+				D4F3EB052E640C9C00405AFC /* logging.cpython-313.pyc in Resources */,
+				D4F3EB062E640C9C00405AFC /* score.cpython-313.pyc in Resources */,
+				D4F3EB072E640C9C00405AFC /* config.py in Resources */,
+				D4F3EB082E640C9C00405AFC /* openai_client.py in Resources */,
+				D4F3EB092E640C9C00405AFC /* config_store.cpython-313.pyc in Resources */,
+				D4F3EB0A2E640C9C00405AFC /* __init__.py in Resources */,
+				D4F3EB0B2E640C9C00405AFC /* README.md in Resources */,
+				D4F3EB0C2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */,
+				D4F3EB0D2E640C9C00405AFC /* __init__.py in Resources */,
+				D4F3EB0E2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */,
+				D4F3EB0F2E640C9C00405AFC /* __init__.py in Resources */,
+				D4F3EB102E640C9C00405AFC /* logging.py in Resources */,
+				D4F3EB112E640C9C00405AFC /* merchant_resolver.py in Resources */,
+				D4F3EB122E640C9C00405AFC /* places_client.cpython-313.pyc in Resources */,
+				D4F3EB132E640C9C00405AFC /* __init__.cpython-310.pyc in Resources */,
+				D4F3EB142E640C9C00405AFC /* home_to_cafe.gpx in Resources */,
+				D4F3EB152E640C9C00405AFC /* db.py in Resources */,
+				D4F3EB162E640C9C00405AFC /* errors.py in Resources */,
+				D4F3EB172E640C9C00405AFC /* score.py in Resources */,
+				D4F3EB182E640C9C00405AFC /* CACHEDIR.TAG in Resources */,
+				D4F3EB192E640C9C00405AFC /* places_client.py in Resources */,
+				D4F3EB1A2E640C9C00405AFC /* main.py in Resources */,
+				D4F3EB1B2E640C9C00405AFC /* redis_store.py in Resources */,
+				D4F3EB1C2E640C9C00405AFC /* resolve.py in Resources */,
+				D4F3EB1D2E640C9C00405AFC /* __init__.cpython-313.pyc in Resources */,
+				D4F3EB1E2E640C9C00405AFC /* README.md in Resources */,
+				D4F3EB1F2E640C9C00405AFC /* request_id.cpython-313.pyc in Resources */,
+				D4F3EB202E640C9C00405AFC /* rewards.json in Resources */,
+				D4F3EB212E640C9C00405AFC /* health.cpython-313.pyc in Resources */,
+				D4F3EB222E640C9C00405AFC /* docker-compose.yml in Resources */,
+				D4F3EB232E640C9C00405AFC /* settings.cpython-313.pyc in Resources */,
+				D4F3EB242E640C9C00405AFC /* settings.py in Resources */,
+				D4F3EB252E640C9C00405AFC /* README_AWS.md in Resources */,
+				D4F3EB262E640C9C00405AFC /* __init__.py in Resources */,
+				D4F3EB272E640C9C00405AFC /* config.cpython-313.pyc in Resources */,
+				D4F3EB282E640C9C00405AFC /* README.md in Resources */,
+				D4F3EB292E640C9C00405AFC /* redis_store.cpython-313.pyc in Resources */,
+				D4F3EB2A2E640C9C00405AFC /* config_store.py in Resources */,
+				D4F3EB2B2E640C9C00405AFC /* score.py in Resources */,
+				D4F3EB2C2E640C9C00405AFC /* requirements.txt in Resources */,
 				A1234567890ABCDEF008 /* Preview Assets.xcassets in Resources */,
 				A1234567890ABCDEF019 /* Visits.xcdatamodeld in Resources */,
 				A1234567890ABCDEF005 /* Assets.xcassets in Resources */,
@@ -169,6 +575,7 @@
 				A1234567890ABCDEF003 /* ContentView.swift in Sources */,
 				A1234567890ABCDEF00A /* LocationManager.swift in Sources */,
 				A1234567890ABCDEF00C /* NotificationManager.swift in Sources */,
+				D4F3EB2D2E640C9C00405AFC /* Makefile in Sources */,
 				A1234567890ABCDEF00E /* ApiClient.swift in Sources */,
 				A1234567890ABCDEF010 /* ConfidenceScorer.swift in Sources */,
 				A1234567890ABCDEF012 /* Persistence.swift in Sources */,
@@ -234,6 +641,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to show recommendations when you enter a store.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location access is required to recommend cards while you shop.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to suggest the best credit card nearby.";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -242,9 +652,6 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to suggest the best credit card nearby.";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need background location access to show recommendations when you enter a store.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Location access is required to recommend cards while you shop.";
 			};
 			name = Debug;
 		};

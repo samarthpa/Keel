@@ -25,7 +25,7 @@ def load_rewards():
 REWARDS_DATA = load_rewards()
 
 # Google Places API configuration
-GOOGLE_PLACES_API_KEY = os.getenv("GOOGLE_PLACES_API_KEY")
+GOOGLE_PLACES_API_KEY = os.getenv("AIzaSyALPTBqIfOHe2X1LGDafnqPgp549kWQQAE")
 GOOGLE_PLACES_BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 
 # MCC/Category mapping
