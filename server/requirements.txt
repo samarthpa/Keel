@@ -27,3 +27,15 @@ sqlmodel[sqlite]
 
 # OpenAI API client for AI-powered features
 openai
+
+# HTTP client for async requests
+httpx
+
+# Password hashing with bcrypt support
+passlib[bcrypt]
+
+# JWT token handling and validation
+python-jose[cryptography]
+
+# Email validation for user registration
+email-validator

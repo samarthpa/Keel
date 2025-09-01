@@ -1,177 +1,376 @@
-# Keel - Location-Based Credit Card Recommendations
+# Keel iOS App
 
-Keel is an iOS app that provides personalized credit card recommendations based on your location. When you visit merchants, the app analyzes your location, resolves the merchant information, and suggests the best credit card to use for maximum rewards.
+A SwiftUI-based iOS application for intelligent credit card recommendations based on merchant visits and location data.
 
-## Features
+## 🎨 Design System
 
-- **Location-Based Recommendations**: Get card suggestions when you arrive at merchants
-- **Confidence Scoring**: Smart algorithm that considers dwell time, visit history, and time of day
-- **Real-Time Notifications**: Instant alerts with card recommendations
-- **Visit History**: Track your location visits and recommendations in Core Data
-- **Google Places Integration**: Accurate merchant resolution using Google Places API
+### Theme Overview
 
-## Prerequisites
+The app uses a comprehensive design system built around a green color palette with consistent spacing, typography, and component styling.
 
-### iOS App Setup
-
-1. **Location Permissions**: The app requires both "When In Use" and "Always" location permissions
-2. **Background Modes**: Enable "Location Updates" in Xcode Signing & Capabilities
-3. **iOS Deployment Target**: iOS 17.0 or later
-
-### Server Requirements
-
-- Python 3.8+
-- Google Places API key
-- FastAPI and dependencies (see server/requirements.txt)
-
-## Quick Start
-
-### 1. Server Setup
-
-```bash
-cd server
-pip install -r requirements.txt
-cp .env.example .env
-# Edit .env and add your Google Places API key
-uvicorn main:app --reload --port 8000
-```
-
-The server will be available at `http://127.0.0.1:8000`
-
-### 2. Environment Variables
-
-Create a `.env` file in the `server` directory with:
-
-```bash
-GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
-```
-
-**Getting a Google Places API Key:**
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Enable the Places API
-3. Create credentials (API key)
-4. Add the key to your `.env` file
-
-### 3. iOS Configuration
-
-Update the API endpoint in `ApiClient.swift`:
+#### Color Tokens
 
 ```swift
-struct ApiConfig {
-    static var baseURL = URL(string: "http://127.0.0.1:8000")! // For simulator
-    // For physical device, use your computer's LAN IP:
-    // static var baseURL = URL(string: "http://192.168.1.100:8000")!
-}
+// Primary Colors
+AppTheme.primaryGreen      // #22C55E - Main brand color
+AppTheme.primaryGreenDark  // Darker variant for contrast
+
+// Background Colors
+AppTheme.background        // Main app background
+AppTheme.surface          // Card and component backgrounds
+
+// Text Colors
+AppTheme.textPrimary      // Primary text color
+AppTheme.textSecondary    // Secondary text color
+
+// Semantic Colors
+AppTheme.success          // Success states and positive feedback
+AppTheme.warning          // Warning states and cautions
+AppTheme.error           // Error states and negative feedback
+AppTheme.accent          // Accent color for highlights
+
+// Utility Colors
+AppTheme.divider          // Border and separator lines
 ```
 
-### 4. Running the App
+#### Typography
 
-1. Open `Keel.xcodeproj` in Xcode
-2. Build and run on device or simulator
-3. Grant location permissions when prompted
-4. Tap "Request Permissions" to start location monitoring
+```swift
+// Headlines
+AppTheme.headline         // Large headlines (32pt, bold)
+AppTheme.headlineSmall    // Medium headlines (24pt, semibold)
 
-## Basic Workflow
+// Titles
+AppTheme.title            // Section titles (20pt, semibold)
+AppTheme.titleSmall       // Subsection titles (18pt, medium)
 
-1. **Start the server** (see Server Setup above)
-2. **Run the app** on your device or simulator
-3. **Walk around** or use the provided GPX files for testing
-4. **See notifications** when you arrive at merchants
-5. **Check the app** for visit history and card recommendations
+// Body Text
+AppTheme.body             // Primary body text (16pt, regular)
+AppTheme.bodyMedium       // Emphasized body text (16pt, medium)
+AppTheme.bodySmall        // Smaller body text (14pt, regular)
 
-## Testing with GPX Files
-
-Use the provided GPX files in the `gpx/` folder to simulate location visits:
-
-- **home_to_cafe.gpx**: Journey to Starbucks (dining merchant)
-- **cafe_to_grocery.gpx**: Journey to Whole Foods (grocery merchant)
-
-See `gpx/README.md` for detailed testing instructions.
-
-## Project Structure
-
-```
-Keel/
-├── Keel/                    # iOS app source code
-│   ├── Keel/               # Main app files
-│   ├── KeelTests/          # Unit tests
-│   └── Visits.xcdatamodeld # Core Data model
-├── server/                 # FastAPI backend
-│   ├── main.py            # API endpoints
-│   ├── rewards.json       # Card reward structures
-│   └── requirements.txt   # Python dependencies
-├── gpx/                   # Location testing files
-└── README.md             # This file
+// Captions
+AppTheme.caption          // Secondary text (12pt, regular)
+AppTheme.captionSmall     // Fine print (10pt, regular)
 ```
 
-## API Endpoints
+#### Spacing
 
-- `GET /health` - Health check
-- `GET /merchant/resolve?lat={lat}&lon={lon}` - Resolve merchant from coordinates
-- `POST /score` - Score credit cards for a merchant
-
-## Card Recommendations
-
-The app currently supports these cards with their reward structures:
-
-- **Amex Gold**: 4x dining, 4x grocery, 1x base
-- **Chase Freedom**: 5x rotating categories, 1x base  
-- **Citi Custom Cash**: 5x dining, 5x gas, 1x base
-
-## Confidence Scoring
-
-The app uses a confidence scoring algorithm that considers:
-
-- **Prior Visits**: More visits to a location increase confidence
-- **Dwell Time**: Longer stays increase confidence
-- **Distance**: Closer proximity increases confidence
-- **Time of Day**: Meal times get bonus points for dining categories
-
-Only visits with confidence ≥ 0.6 trigger merchant resolution and card recommendations.
-
-## Troubleshooting
-
-### Common Issues
-
-1. **No visits detected**: Check location permissions and background modes
-2. **API errors**: Verify server is running and Google Places API key is valid
-3. **No recommendations**: Check confidence scores and dwell time
-4. **Network errors**: Ensure device can reach the server (check IP address)
-
-### Debug Tips
-
-- Check the console for error messages
-- Verify location permissions in Settings
-- Test with GPX files in the simulator
-- Check server logs for API call details
-
-## Development
-
-### Running Tests
-
-```bash
-# iOS tests
-# Run in Xcode: Product > Test
-
-# Server tests (if added)
-cd server
-python -m pytest
+```swift
+AppTheme.spacingXS        // 4pt - Tight spacing
+AppTheme.spacingS         // 8pt - Small spacing
+AppTheme.spacingM         // 16pt - Medium spacing
+AppTheme.spacingL         // 24pt - Large spacing
+AppTheme.spacingXL        // 32pt - Extra large spacing
 ```
 
-### Adding New Cards
+#### Component Styling
 
-1. Update `server/rewards.json` with new card reward structure
-2. Add card to the cards array in `LocationManager.swift`
-3. Test with different merchant categories
+```swift
+AppTheme.cornerRadiusS    // 4pt - Small radius
+AppTheme.cornerRadiusM    // 8pt - Medium radius
+AppTheme.cornerRadiusL    // 12pt - Large radius
 
-## License
+AppTheme.shadowS          // Subtle shadows
+AppTheme.shadowM          // Medium shadows
+AppTheme.shadowL          // Large shadows
+```
 
-This project is for educational and development purposes.
+## 🔄 App Flow
 
-## Contributing
+### Navigation Architecture
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+The app follows a state-driven navigation pattern:
+
+```
+SplashView (3s) → AuthFlowView → MainTabView
+     ↓              ↓              ↓
+AppRootView manages transitions based on SessionManager.isAuthenticated
+```
+
+#### 1. SplashView
+- **Duration**: 3 seconds with tap-to-skip
+- **Purpose**: Brand introduction and app initialization
+- **Features**: Animated "Keel" wordmark, gradient background
+- **Transition**: Automatic to AuthFlowView or MainTabView
+
+#### 2. AuthFlowView
+- **Purpose**: User authentication (Sign Up/Log In)
+- **Features**: 
+  - Segmented control for Sign Up/Log In
+  - Real-time email/password validation
+  - Loading states and error banners
+  - Haptic feedback on success/failure
+- **Success**: Stores JWT token in Keychain, navigates to MainTabView
+
+#### 3. MainTabView
+- **Tabs**: Home, History, Cards, Settings, Profile
+- **Features**: SF Symbols icons, green accent color
+- **Navigation**: Tab-based with smooth transitions
+
+## 🚀 Setup Instructions
+
+### Prerequisites
+
+- Xcode 14.0+
+- iOS 16.0+
+- FastAPI backend running locally (see `server/README.md`)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd Keel
+   ```
+
+2. **Open the project**
+   ```bash
+   open Keel.xcodeproj
+   ```
+
+3. **Build and run**
+   - Select your target device or simulator
+   - Press `Cmd+R` to build and run
+
+### Backend Configuration
+
+#### Setting Base URL
+
+The app connects to your local FastAPI backend. You'll need to expose it via ngrok for device testing:
+
+1. **Start your FastAPI server**
+   ```bash
+   cd server
+   make dev
+   ```
+
+2. **Expose with ngrok**
+   ```bash
+   ngrok http 8000
+   ```
+
+3. **Update Base URL in app**
+   - Open the app
+   - Go to **Settings** tab
+   - Enter your ngrok URL: `https://your-ngrok-url.ngrok.io`
+   - Tap "Test Connection" to verify
+
+#### Local Development
+
+For simulator testing, you can use:
+- **Local**: `https://127.0.0.1:8000`
+- **Network**: `https://your-local-ip:8000`
+
+### Authentication Setup
+
+#### Register/Login Flow
+
+1. **Start the app**
+   - App will show SplashView for 3 seconds
+   - Tap to skip or wait for automatic transition
+
+2. **Create account**
+   - Select "Sign Up" tab
+   - Enter email and password (min 8 characters)
+   - Tap "Create Account"
+   - App will call `POST /auth/register`
+
+3. **Login**
+   - Select "Log In" tab
+   - Enter credentials
+   - Tap "Log In"
+   - App will call `POST /auth/login`
+
+#### Token Storage
+
+- **Location**: iOS Keychain (`com.keel.auth`)
+- **Key**: `keel_jwt_token`
+- **Security**: Encrypted storage, persists across app launches
+- **Auto-refresh**: Automatic token validation on app start
+
+#### Logout Process
+
+1. **Manual logout**
+   - Go to **Settings** tab
+   - Tap "Logout" button
+   - App clears Keychain and returns to AuthFlowView
+
+2. **Automatic logout**
+   - 401 Unauthorized responses trigger auto-logout
+   - SessionManager handles token invalidation
+   - User redirected to AuthFlowView
+
+## 🧪 Testing Features
+
+### Simulate Visit
+
+The app includes a simulation mode for testing without real location data:
+
+1. **Enable simulation**
+   - Go to **Settings** tab
+   - Toggle "Use Mock Visits in Simulator"
+   - Return to **Home** tab
+
+2. **Simulate visit**
+   - Tap "Simulate Visit" button
+   - App calls `POST /v1/mock/visit` with Starbucks data
+   - Then calls `POST /v1/score` for recommendations
+   - Results displayed in "Last Recommendation" card
+
+3. **View results**
+   - Recommendation shows merchant, card, confidence, reason
+   - Tap "View History" to see visit details
+   - History shows top-3 card rankings
+
+### Location Testing
+
+#### Device Testing
+
+For real device testing with location:
+
+1. **Enable location**
+   - App requests location permission on first use
+   - Go to **Settings** tab if permission denied
+   - Tap "Enable Location" button
+
+2. **Location features**
+   - Real-time location tracking via LocationManager
+   - Automatic visit processing when location changes
+   - Background location updates (when app is active)
+
+#### Simulator Limitations
+
+- **CLVisit**: iOS Simulator doesn't provide real CLVisit data
+- **Location accuracy**: Simulated locations may not trigger visit detection
+- **Background updates**: Limited background location in simulator
+- **Recommendation**: Use "Simulate Visit" for testing in simulator
+
+### Debug Features
+
+#### Request Tracking
+
+- **Request IDs**: Each API call gets a unique request ID
+- **Debug View**: Available in Settings tab (Debug Mode toggle)
+- **Error logging**: Detailed error messages and stack traces
+- **Network status**: Real-time API connection status
+
+#### Development Tools
+
+- **Mock visits**: Simulate merchant visits without location
+- **Config display**: Show server configuration values
+- **Raw JSON**: Toggle raw API responses in detail views
+- **Request logs**: Track API calls and responses
+
+## 📱 App Features
+
+### Home Tab
+
+- **Last Recommendation**: Shows most recent card recommendation
+- **API Status**: Real-time connection status indicator
+- **Quick Actions**: Simulate visit or location management
+- **Welcome Message**: Personalized greeting with user email
+
+### History Tab
+
+- **Visit List**: Chronological list of merchant visits
+- **Search**: Filter by merchant, card, or category
+- **Filters**: Merchant and card-based filtering
+- **Detail View**: Top-3 card rankings with reasons
+
+### Cards Tab
+
+- **Card Management**: Add, remove, enable/disable cards
+- **Local Storage**: Cards persisted in UserDefaults
+- **Card Types**: Support for Visa, Mastercard, Amex, Discover
+- **Toggle Controls**: Enable/disable cards for recommendations
+
+### Settings Tab
+
+- **API Configuration**: Base URL with validation
+- **Connection Testing**: Test API connectivity
+- **Server Config**: Display rules_version, model_version, etc.
+- **Debug Options**: Mock visits, request IDs, debug mode
+- **Logout**: Secure session termination
+
+### Profile Tab
+
+- **User Info**: Email and account creation date
+- **App Version**: Current app version and build number
+- **Support Links**: Feedback and App Store rating
+- **Account Management**: User profile from `/auth/me`
+
+## 🔧 Development Notes
+
+### Architecture
+
+- **SwiftUI**: Declarative UI framework
+- **Combine**: Reactive programming for data flow
+- **Core Data**: Local data persistence (for future visits)
+- **Keychain Services**: Secure token storage
+- **Location Services**: Core Location for visit detection
+
+### State Management
+
+- **SessionManager**: Authentication state and token management
+- **ApiClient**: Network requests with error handling
+- **LocationManager**: Location services and visit detection
+- **AppTheme**: Centralized design system
+
+### Error Handling
+
+- **ApiError**: Structured error types with retry logic
+- **ErrorBanner**: Dismissible error display with retry
+- **Loading States**: Progress indicators for async operations
+- **Empty States**: Contextual empty state components
+
+### Testing Strategy
+
+- **Simulator**: Use mock visits for API testing
+- **Device**: Real location testing with CLVisit
+- **Unit Tests**: ApiClient and SessionManager tests
+- **UI Tests**: Authentication flow and tab navigation
+
+## 🚨 Known Limitations
+
+### Location Services
+
+- **CLVisit**: Requires significant location changes to trigger
+- **Background**: Limited background location in iOS
+- **Accuracy**: Location accuracy affects visit detection
+- **Simulator**: No real CLVisit data in iOS Simulator
+
+### API Dependencies
+
+- **Backend**: Requires FastAPI server running
+- **Network**: Internet connection required for recommendations
+- **Authentication**: JWT tokens expire and require refresh
+- **Rate Limits**: API may have rate limiting
+
+### Device Compatibility
+
+- **iOS Version**: Requires iOS 16.0+
+- **Location**: Requires location permission
+- **Keychain**: Requires device with Keychain support
+- **Network**: Requires internet connectivity
+
+## 📚 Additional Resources
+
+- **Backend API**: See `server/README.md` for API documentation
+- **Design System**: `AppTheme.swift` for complete theming
+- **API Client**: `ApiClient.swift` for network layer
+- **Session Management**: `SessionManager.swift` for auth
+- **Location Services**: `LocationManager.swift` for visits
+
+## 🤝 Contributing
+
+1. Follow the existing code style and architecture
+2. Use the established design system (AppTheme)
+3. Add appropriate error handling and loading states
+4. Include accessibility labels and hints
+5. Test on both simulator and device
+6. Update this README for new features
+
+---
+
+**Note**: This app is designed for development and testing purposes. Production deployment would require additional security measures, error handling, and user experience refinements.

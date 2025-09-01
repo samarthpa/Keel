@@ -8,7 +8,7 @@ includes middleware, registers routes, and handles application lifecycle.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes import health, resolve, score, config, events
+from app.routes import health, resolve, score, config, events, auth, profile
 from app.middleware.request_id import RequestIDMiddleware
 from app.utils.logging import configure_logging
 from app.settings import settings
@@ -49,6 +49,8 @@ def create_app() -> FastAPI:
     app.include_router(score.router, tags=["score"])
     app.include_router(resolve.router, tags=["resolve"])
     app.include_router(events.router, tags=["events"])
+    app.include_router(auth.router, tags=["authentication"])
+    app.include_router(profile.router, tags=["profile"])
 
     # TODO: Register exception handlers from utils/errors if desired
     # Example: app.add_exception_handler(Exception, generic_exception_handler)

@@ -6,7 +6,7 @@ import Combine
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
-    let api = ApiClient()
+    let api = ApiClient.shared
     let visitStore = VisitStore()
     
     @Published var events: [String] = []

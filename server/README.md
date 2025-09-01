@@ -149,6 +149,182 @@ Content-Type: application/json
 }
 ```
 
+## Authentication
+
+The API provides JWT-based authentication with secure password hashing and token management.
+
+### Required Environment Variables
+
+Add these to your `.env` file:
+
+```bash
+# JWT Configuration
+AUTH_JWT_SECRET=your-super-secret-jwt-key-at-least-32-characters-long
+AUTH_JWT_ALGO=HS256
+AUTH_ACCESS_TOKEN_EXPIRES_MIN=43200  # 30 days in minutes
+AUTH_REFRESH_TOKEN_EXPIRES_DAYS=30
+
+# Password Security
+AUTH_PASSWORD_MIN_LENGTH=8
+AUTH_PASSWORD_REQUIRE_NUMBERS=true
+AUTH_PASSWORD_REQUIRE_UPPERCASE=true
+AUTH_PASSWORD_REQUIRE_SPECIAL_CHARS=true
+AUTH_BCRYPT_ROUNDS=12
+```
+
+**Security Notes:**
+- **JWT_SECRET**: Must be at least 32 characters long. Use a strong, random string in production.
+- **Password Storage**: Only hashed passwords are stored in the database. Never store plaintext passwords.
+- **Database**: Currently uses SQLite for development. Consider PostgreSQL for production deployments.
+
+### Authentication Endpoints
+
+#### User Registration
+**POST** `/auth/register`
+
+```bash
+curl -X POST http://localhost:8000/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "SecurePass123!"
+  }'
+```
+
+**Response:**
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "Bearer",
+  "expires_in": 1800,
+  "user_id": 1,
+  "email": "user@example.com"
+}
+```
+
+**Error Response:**
+```json
+{
+  "error": {
+    "code": "EMAIL_ALREADY_EXISTS",
+    "message": "User with this email already exists",
+    "retryable": false
+  }
+}
+```
+
+#### User Login
+**POST** `/auth/login`
+
+```bash
+curl -X POST http://localhost:8000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "SecurePass123!"
+  }'
+```
+
+**Response:**
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "token_type": "Bearer",
+  "expires_in": 1800,
+  "user_id": 1,
+  "email": "user@example.com"
+}
+```
+
+**Error Response:**
+```json
+{
+  "error": {
+    "code": "INVALID_CREDENTIALS",
+    "message": "Incorrect email or password",
+    "retryable": false
+  }
+}
+```
+
+#### Get Current User
+**GET** `/auth/me`
+
+```bash
+curl -X GET http://localhost:8000/auth/me \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+```
+
+**Response:**
+```json
+{
+  "id": 1,
+  "email": "user@example.com",
+  "created_at": "2024-01-01T00:00:00Z"
+}
+```
+
+**Error Response (401):**
+```json
+{
+  "detail": "Token has expired"
+}
+```
+
+#### Token Refresh
+**POST** `/auth/refresh`
+
+```bash
+curl -X POST http://localhost:8000/auth/refresh \
+  -H "Content-Type: application/json" \
+  -d '{
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }'
+```
+
+#### Change Password
+**POST** `/auth/change-password`
+
+```bash
+curl -X POST http://localhost:8000/auth/change-password \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "current_password": "OldPass123!",
+    "new_password": "NewPass456!",
+    "confirm_password": "NewPass456!"
+  }'
+```
+
+### Protected Endpoints
+
+Use the `auth_required` dependency for any endpoint that requires authentication:
+
+```python
+from app.routes.auth import auth_required
+
+@router.get("/protected")
+async def protected_route(user_id: int = Depends(auth_required)):
+    return {"user_id": user_id}
+```
+
+### Password Requirements
+
+Passwords must meet the following criteria:
+- Minimum 8 characters
+- At least one number
+- At least one uppercase letter
+- At least one special character (!@#$%^&*()_+-=[]{}|;:,.<>?)
+
+### Security Best Practices
+
+1. **JWT Secret**: Use a strong, random secret key in production
+2. **Token Expiry**: Set appropriate expiry times for your use case
+3. **HTTPS**: Always use HTTPS in production
+4. **Rate Limiting**: Implement rate limiting on auth endpoints
+5. **Password Storage**: Only bcrypt hashes are stored, never plaintext
+6. **Database**: Consider PostgreSQL for production deployments
+
 ## HTTPS for iOS Development
 
 iOS App Transport Security (ATS) requires HTTPS connections. Use one of these methods:
@@ -199,6 +375,8 @@ Before connecting your iOS app, verify:
 - [ ] **HTTPS Working**: ngrok/Cloudflare tunnel provides HTTPS URL
 - [ ] **Endpoints Responding**: Test each endpoint with sample requests
 - [ ] **CORS Enabled**: API accepts requests from your iOS app
+- [ ] **Auth Working**: Test registration and login endpoints
+- [ ] **JWT Secret Set**: Verify AUTH_JWT_SECRET is configured
 
 ### Quick Health Check
 ```bash
@@ -209,6 +387,11 @@ curl "http://localhost:8000/v1/merchant/resolve?lat=37.7749&lon=-122.4194"
 curl -X POST http://localhost:8000/v1/score \
   -H "Content-Type: application/json" \
   -d '{"category": "dining"}'
+
+# Test authentication
+curl -X POST http://localhost:8000/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "test@example.com", "password": "TestPass123!"}'
 ```
 
 ## Development
@@ -239,6 +422,8 @@ Key environment variables in `.env`:
 - `OPENAI_API_KEY`: Optional for enhanced recommendations
 - `REDIS_URL`: Redis connection (default: redis://localhost:6379)
 - `DATABASE_URL`: PostgreSQL connection (optional)
+- `AUTH_JWT_SECRET`: Required for JWT token signing (32+ characters)
+- `AUTH_ACCESS_TOKEN_EXPIRES_MIN`: JWT token expiry in minutes (default: 43200 = 30 days)
 
 ## Architecture
 
@@ -252,13 +437,25 @@ app/
 │   ├── config.py        # Configuration
 │   ├── resolve.py       # Merchant resolution
 │   ├── score.py         # Credit card scoring
-│   └── events.py        # Event processing
+│   ├── events.py        # Event processing
+│   ├── auth.py          # Authentication
+│   └── profile.py       # User profiles
 ├── services/            # Business logic
 │   ├── places_client.py # Google Places API
 │   ├── scoring.py       # Credit card scoring
 │   └── openai_client.py # OpenAI integration
 ├── stores/              # Data storage
-│   └── redis_store.py   # Redis caching
+│   ├── redis_store.py   # Redis caching
+│   ├── db.py            # Database setup
+│   └── user_store.py    # User management
+├── security/            # Security utilities
+│   ├── auth_settings.py # JWT configuration
+│   ├── passwords.py     # Password hashing
+│   └── jwt_tokens.py    # JWT operations
+├── models/              # Database models
+│   └── user.py          # User model
+├── schemas/             # Pydantic schemas
+│   └── auth.py          # Auth request/response schemas
 └── utils/               # Utilities
     ├── logging.py       # Structured logging
     └── errors.py        # Error handling
@@ -284,6 +481,11 @@ app/
 4. **Scoring Not Working**
    - Check `rewards.json` file format
    - Verify category names match between resolution and scoring
+
+5. **Authentication Errors**
+   - Verify `AUTH_JWT_SECRET` is set and at least 32 characters
+   - Check token expiry settings
+   - Ensure database is properly initialized
 
 ### Logs
 ```bash

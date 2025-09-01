@@ -2,12 +2,15 @@
 Database Store
 
 Database connection and operations for persistent data storage.
+Supports both async operations and synchronous SQLite operations.
 """
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Generator
+from contextlib import contextmanager
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import text
+from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy import text, create_engine
+from sqlmodel import SQLModel
 from app.settings import settings
 
 
@@ -292,3 +295,119 @@ class DatabaseStore:
         """
 
         return await self.execute_transaction([delete_query])
+
+
+# SQLite Database Setup for User Store
+class SQLiteDatabase:
+    """
+    SQLite database setup for synchronous operations.
+    
+    Provides SQLite database connection and session management
+    for user authentication and other synchronous operations.
+    """
+    
+    def __init__(self, database_url: str = "sqlite:///app.db"):
+        """
+        Initialize SQLite database.
+        
+        Args:
+            database_url: SQLite database URL (default: sqlite:///app.db)
+        """
+        self.database_url = database_url
+        self.engine = None
+        self.session_factory = None
+        self._setup_database()
+    
+    def _setup_database(self):
+        """
+        Set up SQLite database engine and session factory.
+        """
+        try:
+            # Create SQLite engine
+            self.engine = create_engine(
+                self.database_url,
+                echo=False,  # Set to True for SQL query logging
+                connect_args={"check_same_thread": False}
+            )
+            
+            # Create session factory
+            self.session_factory = sessionmaker(
+                bind=self.engine,
+                class_=Session,
+                expire_on_commit=False
+            )
+            
+            # Create all tables
+            self.create_tables()
+            
+        except Exception as e:
+            print(f"Failed to setup SQLite database: {e}")
+            self.engine = None
+            self.session_factory = None
+    
+    def create_tables(self):
+        """
+        Create all SQLModel tables.
+        """
+        if self.engine:
+            SQLModel.metadata.create_all(self.engine)
+    
+    @contextmanager
+    def get_session(self) -> Generator[Session, None, None]:
+        """
+        Get a database session with context manager.
+        
+        Yields:
+            Session: Database session
+            
+        Example:
+            with get_session() as session:
+                user = session.get(User, 1)
+        """
+        if not self.session_factory:
+            raise RuntimeError("Database not initialized")
+        
+        session = self.session_factory()
+        try:
+            yield session
+            session.commit()
+        except Exception:
+            session.rollback()
+            raise
+        finally:
+            session.close()
+    
+    def ping(self) -> bool:
+        """
+        Ping database to check connectivity.
+        
+        Returns:
+            bool: True if database is responsive
+        """
+        try:
+            with self.get_session() as session:
+                session.execute(text("SELECT 1"))
+            return True
+        except Exception as e:
+            print(f"SQLite ping failed: {e}")
+            return False
+
+
+# Global SQLite database instance
+sqlite_db = SQLiteDatabase()
+
+
+def get_sqlite_session() -> Generator[Session, None, None]:
+    """
+    Get SQLite database session.
+    
+    Yields:
+        Session: Database session
+        
+    Example:
+        with get_sqlite_session() as session:
+            user_store = UserStore(session)
+            user = user_store.get_by_email("user@example.com")
+    """
+    with sqlite_db.get_session() as session:
+        yield session
