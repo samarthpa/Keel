@@ -450,53 +450,7 @@ struct ErrorBanner: View {
     }
 }
 
-// MARK: - Profile View
 
-struct ProfileView: View {
-    @EnvironmentObject var sessionManager: SessionManager
-    
-    var body: some View {
-        NavigationView {
-            VStack(spacing: AppTheme.spacingL) {
-                if let user = sessionManager.currentUser {
-                    VStack(spacing: AppTheme.spacingM) {
-                        Text("Profile")
-                            .keelHeadlineSmall()
-                            .foregroundColor(AppTheme.textPrimary)
-                        
-                        VStack(alignment: .leading, spacing: AppTheme.spacingS) {
-                            Text("Email: \(user.email)")
-                                .keelBody()
-                                .foregroundColor(AppTheme.textPrimary)
-                            
-                            Text("User ID: \(user.id)")
-                                .keelBody()
-                                .foregroundColor(AppTheme.textSecondary)
-                            
-                            Text("Member since: \(user.created_at, style: .date)")
-                                .keelBody()
-                                .foregroundColor(AppTheme.textSecondary)
-                        }
-                        .padding(AppTheme.spacingM)
-                        .keelSurface()
-                    }
-                }
-                
-                Spacer()
-                
-                Button("Logout") {
-                    sessionManager.logout()
-                }
-                .keelSecondaryButton()
-                .padding(.horizontal, AppTheme.spacingM)
-                .padding(.bottom, AppTheme.spacingL)
-            }
-            .keelBackground()
-            .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.large)
-        }
-    }
-}
 
 // MARK: - Previews
 

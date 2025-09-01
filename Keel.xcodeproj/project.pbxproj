@@ -30,6 +30,7 @@
 		D455EAE32E651DBB00909394 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455EAD42E651DBB00909394 /* ApiClientTests.swift */; };
 		D455EAE42E651DBB00909394 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455EAD02E651DBB00909394 /* AppRootView.swift */; };
 		D455EAE52E651DBB00909394 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455EAD92E651DBB00909394 /* SessionManager.swift */; };
+		D455EAE92E651DBB00909394 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455EAD92E651DBB00909395 /* MainTabView.swift */; };
 		D455EAE62E651DBB00909394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D455EAD72E651DBB00909394 /* LaunchScreen.storyboard */; };
 		D455EAE82E651DCB00909394 /* user_store.py in Resources */ = {isa = PBXBuildFile; fileRef = D455EAE72E651DCB00909394 /* user_store.py */; };
 		D455EAEB2E651DDD00909394 /* auth.py in Resources */ = {isa = PBXBuildFile; fileRef = D455EAE92E651DDD00909394 /* auth.py */; };
@@ -73,6 +74,7 @@
 		D455EAD92E651DBB00909394 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D455EADA2E651DBB00909394 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D455EADB2E651DBB00909394 /* ThemeDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDemoView.swift; sourceTree = "<group>"; };
+		D455EAD92E651DBB00909395 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D455EAE72E651DCB00909394 /* user_store.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = user_store.py; sourceTree = "<group>"; };
 		D455EAE92E651DDD00909394 /* auth.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = auth.py; sourceTree = "<group>"; };
 		D455EAEA2E651DDD00909394 /* profile.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = profile.py; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				D455EAD02E651DBB00909394 /* AppRootView.swift */,
 				D455EAD12E651DBB00909394 /* AppTheme.swift */,
 				D455EAD22E651DBB00909394 /* AuthFlowView.swift */,
+				D455EAD92E651DBB00909395 /* MainTabView.swift */,
 				D455EAD32E651DBB00909394 /* DebugView.swift */,
 				D455EAD62E651DBB00909394 /* KeelTests */,
 				D455EAD72E651DBB00909394 /* LaunchScreen.storyboard */,
@@ -561,6 +564,7 @@
 			D455EAE22E651DBB00909394 /* SplashView.swift in Sources */,
 				D455EAE42E651DBB00909394 /* AppRootView.swift in Sources */,
 				D455EAE52E651DBB00909394 /* SessionManager.swift in Sources */,
+				D455EAE92E651DBB00909394 /* MainTabView.swift in Sources */,
 				A1234567890ABCDEF015 /* Visit+CoreDataClass.swift in Sources */,
 				A1234567890ABCDEF017 /* Visit+CoreDataProperties.swift in Sources */,
 				A1234567890ABCDEF001 /* KeelApp.swift in Sources */,

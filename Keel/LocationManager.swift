@@ -28,16 +28,32 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func requestPermissions() {
         print("LocationManager: Requesting permissions...")
         
-        // Check current authorization status first
+        // Check current authorization status first (this is safe on main thread)
         let currentStatus = locationManager.authorizationStatus
         print("LocationManager: Current authorization status: \(currentStatus.rawValue)")
         
-        // Request "When In Use" authorization first
-        print("LocationManager: Requesting 'When In Use' authorization...")
-        locationManager.requestWhenInUseAuthorization()
-        
-        // Note: We'll request "Always" authorization after "When In Use" is granted
-        // This is the recommended approach to avoid confusing the user
+        // Check location services on background thread to avoid UI unresponsiveness
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let locationServicesEnabled = CLLocationManager.locationServicesEnabled()
+            print("LocationManager: Location services enabled: \(locationServicesEnabled)")
+            
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                
+                if !locationServicesEnabled {
+                    print("LocationManager: ERROR - Location services are disabled in Settings!")
+                    print("LocationManager: Please enable Location Services in Settings > Privacy & Security > Location Services")
+                    return
+                }
+                
+                // Request "When In Use" authorization first
+                print("LocationManager: Requesting 'When In Use' authorization...")
+                self.locationManager.requestWhenInUseAuthorization()
+                
+                // Note: We'll request "Always" authorization after "When In Use" is granted
+                // This is the recommended approach to avoid confusing the user
+            }
+        }
     }
     
     // MARK: - CLLocationManagerDelegate

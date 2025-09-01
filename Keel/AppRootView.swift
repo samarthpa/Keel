@@ -204,7 +204,7 @@ struct InfoBanner: View {
                         onDismiss()
                     }
                 }
-                .keelCaption()
+                .font(AppTheme.caption)
                 .foregroundColor(AppTheme.accent)
                 .accessibilityLabel("Dismiss info")
             }
@@ -264,7 +264,7 @@ struct WarningBanner: View {
                         Button(actionTitle) {
                             onAction()
                         }
-                        .keelCaption()
+                        .font(AppTheme.caption)
                         .foregroundColor(AppTheme.warning)
                         .padding(.horizontal, AppTheme.spacingS)
                         .padding(.vertical, AppTheme.spacingXS)
@@ -281,7 +281,7 @@ struct WarningBanner: View {
                             onDismiss()
                         }
                     }
-                    .keelCaption()
+                    .font(AppTheme.caption)
                     .foregroundColor(AppTheme.warning)
                     .accessibilityLabel("Dismiss warning")
                 }
@@ -300,4 +300,34 @@ struct WarningBanner: View {
             .accessibilityHint("Double tap to dismiss")
         }
     }
+}
+
+// MARK: - Main App Root View
+
+struct AppRootView: View {
+    @EnvironmentObject var sessionManager: SessionManager
+    @State private var showSplash = true
+    
+    var body: some View {
+        Group {
+            if showSplash {
+                SplashView {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        showSplash = false
+                    }
+                }
+            } else if sessionManager.isAuthenticated {
+                MainTabView()
+            } else {
+                AuthFlowView()
+            }
+        }
+        .animation(.easeInOut(duration: 0.3), value: sessionManager.isAuthenticated)
+        .animation(.easeInOut(duration: 0.3), value: showSplash)
+    }
+}
+
+#Preview {
+    AppRootView()
+        .environmentObject(SessionManager.shared)
 }

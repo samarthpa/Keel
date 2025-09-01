@@ -13,6 +13,10 @@ import SwiftUI
 /// - 401 handling with auto-logout
 class SessionManager: ObservableObject {
     
+    // MARK: - Singleton
+    
+    static let shared = SessionManager()
+    
     // MARK: - Published Properties
     
     @Published var isAuthenticated = false

@@ -13,6 +13,8 @@ struct SplashView: View {
     @State private var showAuthFlow = false
     @EnvironmentObject var sessionManager: SessionManager
     
+    let onComplete: () -> Void
+    
     // Animation timing
     private let animationDuration: Double = 2.0
     private let navigationDelay: Double = 3.0
@@ -97,8 +99,6 @@ struct SplashView: View {
     }
     
     private func navigateToAuthFlow() {
-        // The AppRootView will handle the navigation based on authentication state
-        // This method is called when the splash screen should transition
-        // The actual navigation is managed by AppRootView.handleAuthenticationChange
+        onComplete()
     }
 }
