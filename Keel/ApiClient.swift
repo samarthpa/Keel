@@ -33,11 +33,27 @@ struct ScoreRequest: Codable {
 }
 
 struct MockVisitRequest: Codable {
+    let lat: Double
+    let lon: Double
+    let user_id: String?
+    let user_cards: [String]?
+    
+    init(lat: Double, lon: Double, user_id: String? = nil, user_cards: [String]? = nil) {
+        self.lat = lat
+        self.lon = lon
+        self.user_id = user_id
+        self.user_cards = user_cards
+    }
+}
+
+struct MockVisitResponse: Codable {
     let merchant: String
-    let mcc: String
-    let category: String
-    let latitude: Double
-    let longitude: Double
+    let category: String?
+    let mcc: String?
+    let confidence: Double
+    let top_card: String?
+    let reason: String?
+    let request_id: String
 }
 
 struct VisitResponse: Codable {
@@ -253,6 +269,10 @@ class ApiClient: ObservableObject {
     /// Logout (revoke token)
     func logout() -> AnyPublisher<EmptyResponse, ApiError> {
         return post(endpoint: "/auth/logout")
+    }
+    
+    func mockVisit(request: MockVisitRequest) -> AnyPublisher<MockVisitResponse, ApiError> {
+        return post(endpoint: "/v1/mock/visit", body: request)
     }
     
     // MARK: - Legacy Async Methods (for backward compatibility)

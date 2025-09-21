@@ -97,6 +97,7 @@ class AuthSettings(BaseSettings):
         env_prefix = "AUTH_"
         env_file = ".env"
         case_sensitive = False
+        extra = "allow"
     
     @validator('jwt_secret')
     def validate_jwt_secret(cls, v):

@@ -15,7 +15,7 @@ Rate Limiting:
 """
 
 from datetime import timedelta
-from typing import Depends, Optional
+from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlmodel import Session

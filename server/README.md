@@ -18,15 +18,21 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
-2. **Install dependencies:**
+2. **Set up environment variables:**
 ```bash
-pip install -r requirements.txt
+# Copy the example environment file
+cp env.example .env
+
+# Edit .env with your real API keys
+# Replace the placeholder values with your actual keys:
+# - GOOGLE_PLACES_API_KEY=your_actual_google_places_key
+# - OPENAI_API_KEY=your_actual_openai_key
+# - SECRET_KEY=your_actual_secret_key
 ```
 
-3. **Configure environment:**
+3. **Install dependencies:**
 ```bash
-cp .env.example .env
-# Edit .env with your API keys and settings
+pip install -r requirements.txt
 ```
 
 4. **Start Redis:**
@@ -34,9 +40,9 @@ cp .env.example .env
 make up  # Starts Redis container
 ```
 
-5. **Run the API:**
+5. **Start the server:**
 ```bash
-make dev  # Starts server on http://localhost:8000
+uvicorn app.main:app --reload --port 8000 --host 0.0.0.0
 ```
 
 ## API Endpoints

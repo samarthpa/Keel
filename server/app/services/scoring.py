@@ -116,6 +116,24 @@ class ScoringService:
         """
         # Normalize category to lowercase for consistent matching
         normalized_category = category.lower() if category else None
+        
+        # Map categories that don't exist in rewards.json to similar categories
+        category_mapping = {
+            'wellness': 'everything_else',  # Wellness services fall back to general rewards
+            'fitness': 'everything_else',   # Fitness services fall back to general rewards
+            'healthcare': 'everything_else', # Healthcare services fall back to general rewards
+            'retail': 'everything_else',    # General retail falls back to general rewards
+            'department store': 'everything_else', # Department stores fall back to general rewards
+            'entertainment': 'everything_else', # Entertainment falls back to general rewards
+            'financial': 'everything_else', # Financial services fall back to general rewards
+            'automotive': 'everything_else', # Automotive falls back to general rewards
+            'pet care': 'everything_else',  # Pet care falls back to general rewards
+            'general': 'everything_else',   # General category falls back to general rewards
+        }
+        
+        # Apply category mapping if needed
+        if normalized_category in category_mapping:
+            normalized_category = category_mapping[normalized_category]
 
         # Use provided cards or all available cards from rewards data
         if cards is None:
@@ -178,12 +196,8 @@ class ScoringService:
             # No category match, use base score
             final_score = base_score
 
-        # Apply annual fee penalty
-        annual_fee = card_data.get("annual_fee", 0)
-        if annual_fee > 0:
-            # Reduce score based on annual fee (higher fee = lower score)
-            fee_penalty = min(annual_fee / 1000.0, 0.3)  # Max 30% penalty
-            final_score *= 1.0 - fee_penalty
+        # No annual fee penalty - user already has the card and has decided to pay the fee
+        # Scoring is based purely on rewards value since the card is already in their wallet
 
         # Ensure score is between 0 and 1
         return max(0.0, min(1.0, final_score))

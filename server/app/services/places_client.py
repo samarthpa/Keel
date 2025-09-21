@@ -49,7 +49,7 @@ class PlacesClient:
             "location": f"{lat},{lon}",
             "radius": self.radius,
             "key": self.api_key,
-            "type": "establishment",  # Search for businesses
+            # Don't use type parameter to get broader results, we'll filter them
         }
 
         # Retry loop for API requests
@@ -62,7 +62,10 @@ class PlacesClient:
                     data = response.json()
 
                     if data.get("status") == "OK":
-                        return data.get("results", [])
+                        results = data.get("results", [])
+                        # Filter out non-business results and prioritize actual businesses
+                        filtered_results = self._filter_business_results(results)
+                        return filtered_results
                     elif data.get("status") == "ZERO_RESULTS":
                         return []
                     else:
@@ -92,6 +95,73 @@ class PlacesClient:
                 await asyncio.sleep(1 * (attempt + 1))
 
         return []
+
+    def _filter_business_results(self, results: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        Filter Google Places results to prioritize actual businesses over localities.
+        
+        Args:
+            results: Raw results from Google Places API
+            
+        Returns:
+            List[Dict[str, Any]]: Filtered results prioritizing businesses
+        """
+        # Types that indicate actual businesses/establishments
+        business_types = {
+            'store', 'restaurant', 'food', 'shopping_mall', 'supermarket', 'grocery_or_supermarket',
+            'gas_station', 'pharmacy', 'bank', 'atm', 'hospital', 'clothing_store', 'electronics_store',
+            'furniture_store', 'home_goods_store', 'jewelry_store', 'shoe_store', 'book_store',
+            'bicycle_store', 'car_dealer', 'car_rental', 'car_repair', 'car_wash', 'laundry',
+            'beauty_salon', 'hair_care', 'spa', 'gym', 'movie_theater', 'night_club', 'bar',
+            'cafe', 'bakery', 'meal_takeaway', 'meal_delivery', 'liquor_store', 'convenience_store',
+            'department_store', 'hardware_store', 'pet_store', 'travel_agency', 'real_estate_agency',
+            'insurance_agency', 'accounting', 'lawyer', 'dentist', 'doctor', 'veterinary_care',
+            'post_office', 'library', 'museum', 'art_gallery', 'tourist_attraction', 'amusement_park',
+            'zoo', 'aquarium', 'stadium', 'university', 'school', 'church', 'mosque', 'synagogue',
+            'hindu_temple', 'cemetery', 'funeral_home', 'embassy', 'city_hall', 'courthouse',
+            'police', 'fire_station', 'hospital', 'pharmacy', 'dentist', 'doctor', 'veterinary_care'
+        }
+        
+        # Types to exclude (non-business entities)
+        exclude_types = {
+            'locality', 'political', 'country', 'administrative_area_level_1', 
+            'administrative_area_level_2', 'administrative_area_level_3',
+            'administrative_area_level_4', 'administrative_area_level_5',
+            'colloquial_area', 'sublocality', 'sublocality_level_1', 'sublocality_level_2',
+            'sublocality_level_3', 'sublocality_level_4', 'sublocality_level_5',
+            'neighborhood', 'premise', 'subpremise', 'postal_code', 'route', 'street_address',
+            'intersection', 'street_number', 'airport', 'bus_station', 'subway_station',
+            'train_station', 'transit_station', 'parking', 'park'
+        }
+        
+        filtered_results = []
+        
+        for result in results:
+            place_types = set(result.get('types', []))
+            
+            # Skip if it's clearly a non-business entity
+            if place_types.intersection(exclude_types):
+                continue
+                
+            # Prioritize results that have business-related types
+            if place_types.intersection(business_types):
+                filtered_results.append(result)
+            # Also include results that don't have obvious non-business types
+            # (in case Google adds new business types we haven't covered)
+            elif not place_types.intersection(exclude_types):
+                # Additional check: make sure it has a reasonable name
+                name = result.get('name', '').strip()
+                if name and len(name) > 2 and not name.lower() in ['san francisco', 'california', 'usa']:
+                    filtered_results.append(result)
+        
+        # Sort by business relevance (more business types = higher priority)
+        def business_score(result):
+            place_types = set(result.get('types', []))
+            return len(place_types.intersection(business_types))
+        
+        filtered_results.sort(key=business_score, reverse=True)
+        
+        return filtered_results
 
     def map_types_to_mcc_category(
         self, types: List[str]

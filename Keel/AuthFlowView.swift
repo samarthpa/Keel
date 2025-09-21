@@ -211,6 +211,17 @@ struct AuthFlowView: View {
                             }
                         )
                         
+                        // TESTING: Bypass Authentication Button
+                        if selectedTab == 1 { // Only show on Log In tab
+                            Button("🚀 Skip Login (Testing)") {
+                                bypassAuthentication()
+                            }
+                            .font(AppTheme.caption)
+                            .foregroundColor(AppTheme.textSecondary)
+                            .padding(.top, AppTheme.spacingS)
+                            .accessibilityLabel("Skip login for testing")
+                        }
+                        
                         // Legal Links
                         VStack(spacing: AppTheme.spacingS) {
                             Text("By continuing, you agree to our")
@@ -404,6 +415,26 @@ struct AuthFlowView: View {
                 )
                 .store(in: &sessionManager.cancellables)
         }
+    }
+    
+    // MARK: - Testing Methods
+    
+    private func bypassAuthentication() {
+        // For testing purposes - bypass the actual authentication
+        print("🧪 TESTING: Bypassing authentication...")
+        
+        // Simulate a successful login by setting the session manager state
+        sessionManager.isAuthenticated = true
+        sessionManager.currentUser = User(
+            id: 123,
+            email: "test@example.com",
+            created_at: Date()
+        )
+        
+        // Provide haptic feedback
+        hapticFeedback.impactOccurred()
+        
+        print("🧪 TESTING: Authentication bypassed successfully!")
     }
 }
 
